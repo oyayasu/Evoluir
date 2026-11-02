@@ -56,8 +56,8 @@ class ProgressWidgetProvider : AppWidgetProvider() {
             items.forEach { item ->
                 val row = RemoteViews(context.packageName, R.layout.widget_row)
                 row.setTextViewText(R.id.row_name, item.improvement.name)
-                row.setTextViewText(R.id.row_dot, item.improvement.symbol)
-                row.setTextColor(R.id.row_dot, ProgressPalette.forScore(item.score()))
+                row.setImageViewResource(R.id.row_icon, IconCatalog.res(item.improvement.symbol))
+                row.setInt(R.id.row_icon, "setColorFilter", ProgressPalette.forScore(item.score()))
                 val todayOutcome = item.markOn(LocalDate.now().toString())?.outcome
                 // Today's selected button is bold and the other one is muted.
                 row.setTextColor(R.id.row_fail, if (todayOutcome == 0) 0xFFDC514F.toInt() else 0xFF929992.toInt())

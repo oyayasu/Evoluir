@@ -18,7 +18,7 @@ class ImprovementStore(context: Context) : SQLiteOpenHelper(context.applicationC
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
                 description TEXT NOT NULL DEFAULT '',
-                symbol TEXT NOT NULL DEFAULT '●',
+                symbol TEXT NOT NULL DEFAULT 'sprout',
                 created_at INTEGER NOT NULL
             )
         """.trimIndent())
@@ -64,7 +64,7 @@ class ImprovementStore(context: Context) : SQLiteOpenHelper(context.applicationC
         val values = ContentValues().apply {
             put("name", cleanName)
             put("description", description.trim())
-            put("symbol", symbol.take(2).ifBlank { "●" })
+            put("symbol", symbol.take(32).ifBlank { "sprout" })
         }
         if (id == null) {
             values.put("created_at", System.currentTimeMillis())

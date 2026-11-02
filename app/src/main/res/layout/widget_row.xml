@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="34dp"
+    android:layout_height="40dp"
     android:orientation="horizontal"
     android:gravity="center_vertical">
-    <TextView
-        android:id="@+id/row_dot"
-        android:layout_width="23dp"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:text="●"
-        android:textSize="18sp"
-        android:textColor="#90958E" />
+    <ImageView
+        android:id="@+id/row_icon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="9dp"
+        android:src="@drawable/ic_sprout"
+        android:contentDescription="Indicador" />
     <TextView
         android:id="@+id/row_name"
         android:layout_width="0dp"
@@ -20,11 +19,11 @@
         android:gravity="center_vertical"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="#202720"
+        android:textColor="#27302B"
         android:textSize="12sp" />
     <TextView
         android:id="@+id/row_fail"
-        android:layout_width="32dp"
+        android:layout_width="34dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="✕"
@@ -34,7 +33,7 @@
         android:textSize="18sp" />
     <TextView
         android:id="@+id/row_pass"
-        android:layout_width="32dp"
+        android:layout_width="34dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="✓"
